@@ -31,6 +31,8 @@ Color kBackgroundCollor = const Color(0xffFAFAFA);
 // In Active Collor
 Color kInactiveCollor = const Color(0xffDBD7EC);
 
+// Transparent Color
+Color kTransparentCollor = Colors.transparent;
 // ========================  Text Style  ==============================
 TextStyle blackTextStyle = GoogleFonts.poppins(
   color: kBlackCollor,

@@ -1,3 +1,5 @@
+import 'package:air_plane/ui/widgets/costum_button.dart';
+import 'package:air_plane/ui/widgets/costum_text_form_field.dart';
 import 'package:flutter/material.dart';
 import 'package:air_plane/shared/theme.dart';
 
@@ -20,35 +22,41 @@ class SignUp extends StatelessWidget {
 
     // Widget input Section
     Widget inputSection() {
-      // input email widget
+      // name input widget
+      Widget nameInput() {
+        return const CostumTextFormField(
+            title: "Full Name", hintText: "Your Full Name ");
+      }
+
+      // Widget email input
       Widget emailInput() {
-        return Container(
-          margin: const EdgeInsets.only(bottom: 20),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                "Full Name",
-                style: blackTextStyle,
-              ),
-              const SizedBox(
-                height: 6,
-              ),
-              TextFormField(
-                cursorColor: kBlackCollor,
-                decoration: InputDecoration(
-                  hintText: "Your Full Name",
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(defaultRadius),
-                  ),
-                  focusedBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(defaultRadius),
-                    borderSide: BorderSide(color: kPrimaryCollor),
-                  ),
-                ),
-              ),
-            ],
-          ),
+        return const CostumTextFormField(
+            title: "Email", hintText: "Your Email Address");
+      }
+
+      // widget input password
+      Widget passwordInput() {
+        return const CostumTextFormField(
+          title: "Password",
+          hintText: "Your Password",
+          obsecureText: true,
+        );
+      }
+
+      // Widget input hoby
+      Widget hobyInput() {
+        return const CostumTextFormField(
+            title: "Hobby", hintText: "Your Hobby");
+      }
+
+      // Widget getStarted Button
+      Widget submitButton() {
+        return CostumButton(
+          title: "Get Started",
+          margin: const EdgeInsets.only(top: 10),
+          onPressed: () {
+            Navigator.pushNamed(context, '/bonus-page');
+          },
         );
       }
 
@@ -61,7 +69,30 @@ class SignUp extends StatelessWidget {
           borderRadius: BorderRadius.circular(defaultRadius),
         ),
         child: Column(
-          children: [emailInput()],
+          children: [
+            nameInput(),
+            emailInput(),
+            passwordInput(),
+            hobyInput(),
+            submitButton(),
+          ],
+        ),
+      );
+    }
+
+    //
+    // Widget tacButton
+    Widget tacButton() {
+      return Container(
+        margin: const EdgeInsets.only(top: 50, bottom: 50),
+        child: Center(
+          child: Text(
+            "Terms and Conditions",
+            style: greyTextStyle.copyWith(
+                fontSize: 16,
+                fontWeight: light,
+                decoration: TextDecoration.underline),
+          ),
         ),
       );
     }
@@ -72,7 +103,11 @@ class SignUp extends StatelessWidget {
       body: SafeArea(
         child: ListView(
           padding: EdgeInsets.symmetric(horizontal: defaultMargin),
-          children: [title(), inputSection()],
+          children: [
+            title(),
+            inputSection(),
+            tacButton(),
+          ],
         ),
       ),
     );

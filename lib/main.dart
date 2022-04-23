@@ -1,4 +1,6 @@
+import 'package:air_plane/ui/pages/bonus_page.dart';
 import 'package:air_plane/ui/pages/get_started_pages.dart';
+import 'package:air_plane/ui/pages/main_page.dart';
 import 'package:air_plane/ui/pages/sign_up.dart';
 import 'package:air_plane/ui/pages/splash_page.dart';
 import 'package:flutter/material.dart';
@@ -21,6 +23,10 @@ class MyApp extends StatelessWidget {
         '/get-started': (context) => const GetStartedPage(),
         // route sign up
         '/sign-up': (context) => const SignUp(),
+        // route bonus page
+        '/bonus-page': (context) => const BonusPage(),
+        // route main page
+        '/main-page': (context) => const MainPage(),
       },
     );
   }

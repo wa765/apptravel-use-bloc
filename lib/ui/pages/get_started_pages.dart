@@ -1,3 +1,4 @@
+import 'package:air_plane/ui/widgets/costum_button.dart';
 import 'package:flutter/material.dart';
 import 'package:air_plane/shared/theme.dart';
 
@@ -43,28 +44,13 @@ class GetStartedPage extends StatelessWidget {
                 const SizedBox(
                   height: 50,
                 ),
-                Container(
-                  margin: EdgeInsets.only(
-                      bottom: MediaQuery.of(context).size.height * 0.08),
+                CostumButton(
+                  title: "Get Started",
                   width: MediaQuery.of(context).size.width / 1.5,
-                  height: MediaQuery.of(context).size.height * 0.07,
-                  child: ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      primary: kPrimaryCollor,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(defaultRadius),
-                      ),
-                    ),
-                    onPressed: () {
-                      // route sign up
-                      Navigator.pushNamed(context, '/sign-up');
-                    },
-                    child: Text(
-                      "Get Started",
-                      style: whiteTextStyle.copyWith(
-                          fontSize: 18, fontWeight: medium),
-                    ),
-                  ),
+                  margin: const EdgeInsets.only(bottom: 80),
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/sign-up');
+                  },
                 ),
               ],
             ),
