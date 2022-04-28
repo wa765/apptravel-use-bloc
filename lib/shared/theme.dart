@@ -33,6 +33,15 @@ Color kInactiveCollor = const Color(0xffDBD7EC);
 
 // Transparent Color
 Color kTransparentCollor = Colors.transparent;
+
+// Unavailable Color
+Color kUnavailableCollor = const Color(0xffEBECF1);
+
+// Available Color
+Color kAavailableCollor = const Color(0xffE0D9FF);
+
+// Selected Color
+Color kSelectedCollor = const Color(0xff5C40CC);
 // ========================  Text Style  ==============================
 TextStyle blackTextStyle = GoogleFonts.poppins(
   color: kBlackCollor,
